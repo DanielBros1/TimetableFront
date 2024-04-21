@@ -1,0 +1,12 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Aby upewnić się, że nagłówek jest zawsze na wierzchu */
+    /* tło ciemno zielone */
+    background-color: rgba(0, 128, 0, 0.8);
+}
+
+nav {
+  margin-top: 10vh; /* Ustawia górny margines na 10% wysokości widoku przeglądarki */
+}

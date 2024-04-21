@@ -1,0 +1,14 @@
+<!--<ul>-->
+<!--  <li *ngFor="let student of students">-->
+<!--    {{ student.name }}-->
+<!--  </li>-->
+<!--</ul>-->
+<p> HELLO</p>
+<section>
+  <h2>Students</h2>
+  <ul>
+    <li *ngFor="let student of students">
+      {{ student.studentNumber }} - {{ student.person.firstName }} {{ student.person.lastName }}
+    </li>
+  </ul>
+</section>
