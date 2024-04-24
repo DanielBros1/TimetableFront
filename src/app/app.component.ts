@@ -7,14 +7,14 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  animations: [
-    trigger('fadeInOut', [
-      state('void', style({
-        opacity: 0
-      })),
-      transition('void <=> *', animate(1000)),
-    ])
-  ],
+  // animations: [
+  //   trigger('fadeInOut', [
+  //     state('void', style({
+  //       opacity: 0
+  //     })),
+  //     transition('void <=> *', animate(1000)),
+  //   ])
+  // ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

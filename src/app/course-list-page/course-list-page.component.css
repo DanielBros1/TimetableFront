@@ -1,0 +1,43 @@
+.course-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  /*margin: 25px 0;*/
+  font-size: 0.9em;
+  min-width: 400px;
+  width: 95%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.60);
+}
+
+.course-table thead tr {
+  /*background-color: var(--primary-color);*/
+  background-color: #009688;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.course-table th,
+.course-table td {
+  padding: 12px 15px;
+}
+
+.course-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.course-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.course-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009688;
+}
+
+/* Add a hover effect to the elements of the table */
+.course-table tbody tr:hover {
+  background-color: #1fb2a2;
+  cursor: pointer;
+}
