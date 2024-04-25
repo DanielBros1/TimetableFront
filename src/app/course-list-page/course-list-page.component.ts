@@ -37,4 +37,11 @@ export class CourseListPageComponent {
 
 
     }
+
+    onRowClick(courseId: number) {
+        console.log('Kliknięto wiersz o ID:', courseId);
+        // Wyświetlenie alertu z komunikatem
+        alert('Kliknięto wiersz o ID: ' + courseId);
+
+    }
 }

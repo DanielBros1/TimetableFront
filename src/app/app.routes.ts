@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
 import {StudentListPageComponent} from "./student-list-page/student-list-page.component";
 import {CourseListPageComponent} from "./course-list-page/course-list-page.component";
+import {CourseDetailsComponent} from "./course-details/course-details.component";
 
 export const routes: Routes = [
   {
@@ -24,6 +25,12 @@ export const routes: Routes = [
     path: 'courses',
     component: CourseListPageComponent,
     title: 'Course List Page'
+  },
+
+  {
+    path: 'course/details/:id',
+    component: CourseDetailsComponent,
+    title: 'Course Details Page'
   }
 
 ];
