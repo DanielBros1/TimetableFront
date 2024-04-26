@@ -1,3 +1,72 @@
+
+
+<!--&lt;!&ndash;Print information about course&ndash;&gt;-->
+<h1>Course Information</h1>
+<p>Course {{ course.id }} - {{ course.name }}</p>
+<p>{{ course.coordinatorTeacher.person.firstName }} {{ course.coordinatorTeacher.person.lastName }} {{ course.coordinatorTeacher.academicTitle.title }}</p>
+<p>ETCS: {{ course.ects }}</p>
+
+<!-- *ngFor groups -->
+
+
+<!--&lt;!&ndash;Print information about course groups&ndash;&gt;-->
+<h1>Course Groups</h1>
+<div *ngFor="let group of groups">
+    <p>Group ID: {{ group.id }}, Course ID: {{ group.courseId }}</p>
+    <p>TeacherId: {{ group.teacherId }} </p>
+    <p>Group {{ group.groupNumber }}</p>
+    <p>{{ group.dayOfWeek }} </p>
+    <p>{{ group.dateStarted }} - {{ group.dateFinished }}</p>
+    <p>{{ group.type }}</p>
+</div>
+
+
+<h1>All Events</h1>
+<div *ngFor="let event of events">
+    <p>{{ event.title }}</p>
+    <p>{{ event.dayOfWeek }}</p>
+    <p>{{ event.start }} - {{ event.end }}</p>
+    <p>{{ event.class }}</p>
+
+</div>
+
+
+<div class="calendar">
+    <div class="timeline">
+        <div class="spacer"></div>
+        <div class="time-marker" *ngFor="let time of times">{{ time }}</div>
+    </div>
+
+    <div class="days">
+        <div class="day" *ngFor="let day of days">
+            <div class="date">
+                <p class="date-day">{{ day }}</p>
+            </div>
+            <div class="events">
+                <ng-container *ngIf="groups">
+                    <ng-container *ngFor="let group of groups">
+                        <!-- Specify the day of the week -->
+                        <!-- Specify the class of the event based on start and end time -->
+                        <!-- Specify the class of the event based on the course type -->
+                        <!-- Only first three letters of the day should be compared (Both Monday and Mon are valid) -->
+                        <div *ngIf="group.dayOfWeek.slice(0,3) === day.slice(0, 3)"
+                             class="event start-{{ group.dateStarted }} end-{{ group.dateFinished }}"
+                             [ngClass]="group.type">
+                            <!-- Fetch only two first digit of the date -->
+                            <p class="title">{{ course.name }} - Group {{ group.groupNumber }}</p>
+                            <p class="time">{{ group.dateStarted }} - {{ group.dateFinished }}</p>
+                            <br>
+                            <p class="type">{{ group.type }}</p>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="calendar">
     <div class="timeline">
         <div class="spacer"></div>
@@ -18,6 +87,7 @@
                         <div *ngIf="event.dayOfWeek === day"
                              class="event start-{{ event.start }} end-{{ event.end }}"
                              [ngClass]="event.class">
+                            <p>event start-{{ event.start }} end-{{ event.end }}</p>
 
                                 <p class="title">{{ event.title }}</p>
                                 <p class="time">{{ event.start }} - {{ event.end }}</p>
@@ -30,31 +100,26 @@
 </div>
 
 
-<!--&lt;!&ndash;&lt;!&ndash;Print information about course&ndash;&gt;&ndash;&gt;-->
-<!--        <h1>Course Information</h1>-->
-<!--        <p>Course {{ course.id }} - {{ course.name }}</p>-->
-<!--        <p>{{ course.coordinatorTeacher.person.firstName }} {{ course.coordinatorTeacher.person.lastName }} {{ course.coordinatorTeacher.academicTitle.title }}</p>-->
-<!--        <p>ETCS: {{ course.ects }}</p>-->
 
 
-<div class="day tues">
-    <div class="date">
-        <p class="date-day">Tue</p>
-    </div>
-    <div class="events">
-        <div class="event start-10 end-12">
-            <p class="title">Corporate Finance</p>
-            <p class="time">10 AM - 12 PM</p>
-        </div>
-        <div class="event start-4 end-5 writing">
-            <p class="title">Writing Seminar</p>
-            <p class="time">4 PM - 5 PM</p>
-        </div>
-        <div class="event start-1 end-4 ent-law">
-            <p class="title">Entertainment Law</p>
-            <p class="time">1PM - 4PM</p>
-        </div>
-</div>
+<!--<div class="day tues">-->
+<!--    <div class="date">-->
+<!--        <p class="date-day">Tue</p>-->
+<!--    </div>-->
+<!--    <div class="events">-->
+<!--        <div class="event start-10 end-12">-->
+<!--            <p class="title">Corporate Finance</p>-->
+<!--            <p class="time">10 AM - 12 PM</p>-->
+<!--        </div>-->
+<!--        <div class="event start-4 end-5 writing">-->
+<!--            <p class="title">Writing Seminar</p>-->
+<!--            <p class="time">4 PM - 5 PM</p>-->
+<!--        </div>-->
+<!--        <div class="event start-1 end-4 ent-law">-->
+<!--            <p class="title">Entertainment Law</p>-->
+<!--            <p class="time">1PM - 4PM</p>-->
+<!--        </div>-->
+<!--</div>-->
 <!--        <div class="day wed">-->
 <!--            <div class="date">-->
 <!--&lt;!&ndash;                <p class="date-num">11</p>&ndash;&gt;-->
