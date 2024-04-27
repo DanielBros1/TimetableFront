@@ -3,6 +3,7 @@ import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
 import {StudentListPageComponent} from "./student-list-page/student-list-page.component";
 import {CourseListPageComponent} from "./course-list-page/course-list-page.component";
 import {CourseDetailsComponent} from "./course-details/course-details.component";
+import {StudentDetailsComponent} from "./student-details/student-details.component";
 
 export const routes: Routes = [
   {
@@ -19,6 +20,12 @@ export const routes: Routes = [
     path: 'students',
     component: StudentListPageComponent,
     title: 'Student List Page'
+  },
+
+  {
+    path: 'student/details/:studentNumber',
+    component: StudentDetailsComponent,
+    title: 'Student Details Page'
   },
 
   {

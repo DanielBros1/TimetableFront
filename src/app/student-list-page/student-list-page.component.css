@@ -1,0 +1,40 @@
+.students-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 95%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.60);
+}
+
+.students-table thead tr {
+    background-color: #009688;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.students-table th,
+.students-table td {
+    padding: 12px 15px;
+}
+
+.students-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.students-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.students-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009688;
+}
+
+/* Add a hover effect to the elements of the table */
+.students-table tbody tr:hover {
+    background-color: #1fb2a2;
+    cursor: pointer;
+}
