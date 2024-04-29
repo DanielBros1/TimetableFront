@@ -20,12 +20,7 @@ export class StudentService {
       this.students = data;
     });
   }
-
-    getStudents(): Observable<any[]> {
-        return this.http.get<any[]>(this.url);
-    }
-
-    getStudentByStudentNumber(studentNumber: number): Observable<any> {
+  getStudentByStudentNumber(studentNumber: number): Observable<any> {
         return this.http.get<any>(`${this.url}/${studentNumber}`);
     }
 }

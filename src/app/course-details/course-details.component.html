@@ -1,32 +1,35 @@
 
-
-<h1>Course Information</h1>
-<p>Course {{ course.id }} - {{ course.name }}</p>
-<p>{{ course.coordinatorTeacher.person.firstName }} {{ course.coordinatorTeacher.person.lastName }} {{ course.coordinatorTeacher.academicTitle.title }}</p>
-<p>ETCS: {{ course.ects }}</p>
-
-
-
-<h1>Course Groups</h1>
-<div *ngFor="let group of groups">
-    <p>Group ID: {{ group.id }}, Course ID: {{ group.course.name }}</p>
-    <p>TeacherId: {{ group.teacher.person.firstName }} {{ group.teacher.person.lastName }} {{ group.teacher.academicTitle.title }}</p>
-    <p>Group {{ group.groupNumber }}</p>
-    <p>{{ group.dayOfWeek }} </p>
-    <p>{{ group.dateStarted }} - {{ group.dateFinished }}</p>
-    <p>{{ group.type }}</p>
+<!-- ngIf is used to check if the course object is available. If it is available, the course details will be displayed. -->
+<div class="course-details-container" *ngIf="course">
+    <h1 class="h1_info">Course Information</h1>
+    <table>
+        <caption></caption>
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Course ID</td>
+            <td>{{ course.id }}</td>
+        </tr>
+        <tr>
+            <td>Course Name</td>
+            <td>{{ course.name }}</td>
+        </tr>
+        <tr>
+            <td>Coordinator</td>
+            <td>{{ course["coordinatorTeacher"]["person"]["firstName"] }} {{ course["coordinatorTeacher"]["person"]["lastName"] }} {{ course["coordinatorTeacher"]["academicTitle"].title }}</td>
+        </tr>
+        <tr>
+            <td>ECTS</td>
+            <td>{{ course["ects"] }}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-
-
-<h1>All Events</h1>
-<div *ngFor="let event of events">
-    <p>{{ event.title }}</p>
-    <p>{{ event.dayOfWeek }}</p>
-    <p>{{ event.start }} - {{ event.end }}</p>
-    <p>{{ event.class }}</p>
-
-</div>
-
 
 
 <div class="calendar">
@@ -44,15 +47,14 @@
                 <ng-container *ngIf="groups">
                     <ng-container *ngFor="let group of groups">
                         <!-- Specify the day of the week -->
-                        <!-- Specify the class of the event based on start and end time -->
-                        <!-- Specify the class of the event based on the course type -->
+                        <!-- Specify the class of the group based on start and end time -->
+                        <!-- Specify the class of the group based on the course type -->
                         <!-- Only first three letters of the day should be compared (Both Monday and Mon are valid) -->
-                        <div *ngIf="group.dayOfWeek.slice(0,3) === day.slice(0, 3)"
-                             class="event start-{{ group.dateStarted }} end-{{ group.dateFinished }}"
+                        <div *ngIf="group['dayOfWeek'].slice(0,3) === day.slice(0, 3)"
+                             class="event start-{{ group['dateStarted'] }} end-{{ group['dateFinished'] }}"
                              [ngClass]="group.type">
-                            <!-- Fetch only two first digit of the date -->
-                            <p class="title">{{ course.name }} - Group {{ group.groupNumber }}</p>
-                            <p class="teacher">{{ group.teacher.person.firstName }} {{ group.teacher.person.lastName }} </p>
+                            <p class="title">{{ course.name }} - Group {{ group["groupNumber"] }}</p>
+                            <p class="teacher">{{ group["teacher"]["person"]["firstName"] }} {{ group["teacher"]["person"]["lastName"] }} </p>
                             <br>
                             <p class="type">{{ group.type }}</p>
                         </div>

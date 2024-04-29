@@ -57,13 +57,12 @@
                 <ng-container *ngIf="groups">
                     <ng-container *ngFor="let g of groups">
                         <!-- Specify the day of the week -->
-                        <!-- Specify the class of the event based on start and end time -->
-                        <!-- Specify the class of the event based on the course type -->
+                        <!-- Specify the class of the group based on start and end time -->
+                        <!-- Specify the class of the group based on the course type -->
                         <!-- Only first three letters of the day should be compared (Both Monday and Mon are valid) -->
                         <div *ngIf="g.group['dayOfWeek'].slice(0,3) === day.slice(0, 3)"
                              class="event start-{{ g.group['dateStarted'] }} end-{{ g.group['dateFinished'] }}"
                                 [ngClass]="g.group.type">
-                            <!-- Fetch only two first digit of the date -->
                             <p class="title">{{ g.group["course"].name }} - Group {{ g.group["groupNumber"] }}</p>
                             <p class="teacher">{{ g.group["teacher"]["person"]["firstName"] }} {{ g.group["teacher"]["person"]["lastName"] }} </p>
                             <br>

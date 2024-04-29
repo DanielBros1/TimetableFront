@@ -2,7 +2,6 @@
 /*Set container at the left side of the page*/
 .student-details-container {
 
-    /*margin-left: 20px;*/
     font-family: Arial, sans-serif;
     max-width: 600px;
     margin: 0 auto;
@@ -179,7 +178,6 @@ table tr:nth-child(even) {
 .event:hover {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    /*border: 2px solid #f2d3d8;*/
 }
 
 .space, .date {

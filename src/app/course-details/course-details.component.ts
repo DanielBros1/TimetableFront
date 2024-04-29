@@ -19,14 +19,6 @@ export class CourseDetailsComponent implements OnInit {
     times: string[] = ['8 AM', '9 AM', '10 AM', '11 AM', '12 AM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM'];
     days: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 
-    events: any[] = [
-        {title: 'Securities Regulation', dayOfWeek: 'Wednesday', start: '2 PM', end: '5 PM', class: 'corp-fi'},
-        {title: 'Corporate Finance', dayOfWeek: 'Thursday', start: '10 AM', end: '12 AM', class: 'ent-law'},
-        {title: 'Entertainment Law', dayOfWeek: 'Monday', start: '8 AM', end: '12 AM', class: 'securities-reg'},
-        {title: 'Criminal Law', dayOfWeek: 'Tuesday', start: '12 AM', end: '3 PM', class: 'criminal-law'},
-    ];
-
-
     constructor(private route: ActivatedRoute,
                 private courseService: CourseService,
                 private groupsService: GroupsService) {
@@ -41,23 +33,6 @@ export class CourseDetailsComponent implements OnInit {
             });
         });
     }
-
-
-
-    // getAllGroups() {
-    // this.groupsService.getGroups().subscribe(groups => {
-    //   this.groups = groups;
-    // });
-    // }
-
-    // getGroups(courseId: number) {
-    // this.groupsService.getGroupsByCourseId(courseId).subscribe(groups => {
-    //   this.groups = groups;
-    //   // print the groups
-    //
-    // });
-    // }
-
     getGroups(courseId: number) {
         this.groupsService.getGroupsByCourseId(courseId).subscribe(groups => {
             this.groups = groups.map(group => {

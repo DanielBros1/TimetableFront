@@ -1,3 +1,42 @@
+.course-details-container {
+
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.h1_info{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+
 .calendar {
     display: grid;
     gap: 10px;
@@ -136,7 +175,6 @@
 .event:hover {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    /*border: 2px solid #f2d3d8;*/
 }
 
 .space, .date {

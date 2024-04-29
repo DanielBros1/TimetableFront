@@ -18,16 +18,7 @@ export class StudentGroupService {
             this.studentGroups = data;
         });
     }
-
-    getStudentGroups(): Observable<any> {
-        return this.http.get<any>(this.url);
-    }
-
-    getStudentGroupsByCourseId(courseId: any): Observable<any[]> {
-        return this.http.get<any[]>(`${this.url}/course/${courseId}`);
-    }
-
-    getStudentGroupsByStudentNumber(studentNumber: String): Observable<any[]> {
+  getStudentGroupsByStudentNumber(studentNumber: String): Observable<any[]> {
         return this.http.get<any[]>(`${this.url}/student/${studentNumber}`);
     }
 

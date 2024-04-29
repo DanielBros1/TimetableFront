@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {GroupsService} from "../service/groups.service";
 import {ActivatedRoute} from "@angular/router";
-import {CourseService} from "../service/course.service";
 import {StudentService} from "../service/student.service";
 import {StudentGroupService} from "../service/student-group.service";
 import {CommonModule} from "@angular/common";
@@ -38,7 +36,7 @@ export class StudentDetailsComponent implements OnInit {
         });
     }
 
-    getGroupsByStudentNumber(studentNumber: String) {
+    getGroupsByStudentNumber(studentNumber: string) {
         this.studentGroupService.getStudentGroupsByStudentNumber(studentNumber).subscribe(studentGroups => {
             this.groups = studentGroups.map(group => {
                 // convert the date format ex. (8:00:00 --> 8 AM)

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
-import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @Component({
   selector: 'app-welcome-page',

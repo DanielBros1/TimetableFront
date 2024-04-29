@@ -1,13 +1,3 @@
-<section>
-    <h2>Students</h2>
-    <ul>
-        <li *ngFor="let student of students">
-            {{ student.studentNumber }} - {{ student.person.firstName }} {{ student.person.lastName }}
-        </li>
-    </ul>
-</section>
-
-
 <div class="center">
     <button id="show-login" (click)="showLogin()">Add student to group</button>
 </div>
@@ -19,26 +9,27 @@
             <label for="student">Select Student</label>
             <select id="student" [(ngModel)]="studentID">
                 <option *ngFor="let student of students"
-                        [value]="student.studentNumber">{{ student.person.firstName }} {{ student.person.lastName }}</option>
+                        [value]="student['studentNumber']">{{ student["person"]["firstName"] }} {{ student["person"]["lastName"] }}</option>
             </select>
         </div>
         <div class="form-element">
             <label for="group">Select Group</label>
             <select id="group" [(ngModel)]="groupID">
-                <option *ngFor="let group of groups" [value]="group.id">{{ group.course.name }}: {{ group.dateStarted }}
-                    - {{ group.dateFinished }}. {{ group.dayOfWeek }}, {{ group.type }}</option>
+                <option *ngFor="let group of groups" [value]="group.id">{{ group["course"].name }}: {{ group["dateStarted"] }}
+                    - {{ group["dateFinished"] }}. {{ group["dayOfWeek"] }}, {{ group.type }}</option>
             </select>
         </div>
         <div class="form-element">
-            <!--            Print studentID and groupID-->
-            <p> {{ studentID }} {{ groupID }}</p>
             <button (click)="addStudentToGroup(studentID, groupID)">Add Student to Group</button>
         </div>
     </div>
 </div>
 
+<div class="divider"></div>
+
+
 <table class='table'>
-    <caption>Students</caption>
+    <caption></caption>
     <thead>
     <tr>
         <th>Student Number</th>
@@ -48,16 +39,10 @@
     </tr>
     </thead>
     <tbody>
-    <!--
-      {
-        path: 'student/details/:studentNumber',
-        component: StudentDetailsComponent,
-        title: 'Student Details Page'
-      },-->
-    <tr *ngFor="let student of students" [routerLink]="['/student/details', student.studentNumber]">
-        <td>{{ student.studentNumber }}</td>
-        <td>{{ student.person.firstName }}</td>
-        <td>{{ student.person.lastName }}</td>
+    <tr *ngFor="let student of students" [routerLink]="['/student/details', student['studentNumber']]">
+        <td>{{ student["studentNumber"] }}</td>
+        <td>{{ student["person"]["firstName"] }}</td>
+        <td>{{ student["person"]["lastName"] }}</td>
         <td>{{ student.status }}</td>
 
     </tr>
