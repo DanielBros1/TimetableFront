@@ -1,44 +1,160 @@
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 100px;
-  background: seagreen;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100; /* z-index is used to make the header on top of the other elements */
+.container {
+    position: relative;
+    display: flex;
+    padding: 80px 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
 }
 
-.logo {
-  font-size: 32px;
-  color : white;
-  text-decoration: none;
-  font-weight: 700;
+.card {
+    position: relative;
+    width: 350px;
+    height: 180px;
+    background: #fff;
+    transition: 0.5s;
 }
 
-.navbar a {
-  position: relative;
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  margin-left: 40px;
+
+.card:hover {
+    height: 450px;
+
+}
+/*Obrecz naokolo zewnetrzengo prostokata*/
+.card .lines {
+    position: absolute;
+    inset: 0;
+    background: #b9bd5e;
+    overflow: hidden;
 }
 
-.navbar a::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: white;
-  transition: .3s;
- }
+/*.card .lines:before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    width: 600px;*/
+/*    height: 120px;*/
+/*    background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f4ff, transparent);*/
+/*}*/
 
 
-.navbar a:hover::before {
-  width: 100%;
+.card .lines::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #009688;
+}
+
+/*Obrecz naokolo wewnetrznego prostokata*/
+.card .imgBx{
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translateX(-50%);
+    background: #fafaa3;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:hover .imgBx {
+    top: 25px;
+    width: 250px;
+    height: 250px;
+}
+.card .imgBx:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+    animation: animate2 6s linear infinite;
+    animation-play-state: paused;
+}
+
+.card:hover .imgBx:before {
+    animation-play-state: running;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+}
+
+.card .imgBx:after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #f0f0f0
+}
+
+.card .imgBx img {
+    position: absolute;
+    width: 100px;
+    z-index: 10;
+    opacity: 0.75;
+}
+.card .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.card .content .details {
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(150px);
+}
+
+.card:hover .content .details {
+    transform: translateY(0);
+}
+
+.card .content .details h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #45f3ff;
+    line-height: 1.2em;
+}
+
+.card .content .details p {
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card .content .details a {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #45f4ff;
+    color: #292929;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover .content .details p,
+.card:hover .content .details a {
+    opacity: 1;
 }

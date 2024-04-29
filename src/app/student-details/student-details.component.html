@@ -1,57 +1,46 @@
-<p>student-details works!</p>
-
-<h1>Student Information</h1>
-<p>Student ID: {{ student.studentNumber }}</p>
-<p>First Name: {{ student.person.firstName }} {{ student.person.lastName }}</p>
-<p>Data enrolled: {{ student.dateEnrolled }}</p>
-<p>Status: {{ student.status }}</p>
-
 
 <div class="student-details-container">
     <h1 class="h1_info">Student Information</h1>
     <table>
+        <caption></caption>
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
         <tr>
             <td>Student ID:</td>
-            <td>{{ student.studentNumber }}</td>
+            <td>{{ student["studentNumber"] }}</td>
         </tr>
         <tr>
             <td>First Name:</td>
-            <td>{{ student.person.firstName }}
+            <td>{{ student["person"]["firstName"] }}
         </tr>
         <tr>
             <td>Last Name:</td>
-            <td>{{ student.person.lastName }}</td>
+            <td>{{ student["person"]["lastName"] }}</td>
         </tr>
         <tr>
             <td>Email:</td>
-            <td>{{ student.person.email }}</td>
+            <td>{{ student["person"]["email"] }}</td>
         </tr>
         <tr>
             <td>Phone:</td>
-            <td>{{ student.person.phone }}</td>
+            <td>{{ student["person"]["phone"] }}</td>
         <tr>
             <td>Date Enrolled:</td>
-            <td>{{ student.dateEnrolled }}</td>
+            <td>{{ student["dateEnrolled"] }}</td>
         </tr>
         <tr>
             <td>Status:</td>
             <td>{{ student.status }}</td>
         </tr>
+        </tbody>
     </table>
 </div>
 
-
-<h1>All groups</h1>
-<div *ngFor="let studentGroup of groups">
-    <p>{{ studentGroup.student.studentNumber }}</p>
-    <p>{{ studentGroup.student.person.firstName }} {{ studentGroup.student.person.lastName }}</p>
-    <p>{{ studentGroup.group.id }}</p>
-    <p>{{ studentGroup.group.course.name }}</p>
-    <p>{{ studentGroup.group.teacher.person.firstName }} {{ studentGroup.group.teacher.person.lastName }}</p>
-    <p>{{ studentGroup.group.dayOfWeek }}</p>
-    <p>{{ studentGroup.group.dateStarted }}</p>
-    <p>{{ studentGroup.group.dateFinished }}</p>
-</div>
 
 <div class="calendar">
     <div class="timeline">
@@ -71,12 +60,12 @@
                         <!-- Specify the class of the event based on start and end time -->
                         <!-- Specify the class of the event based on the course type -->
                         <!-- Only first three letters of the day should be compared (Both Monday and Mon are valid) -->
-                        <div *ngIf="g.group.dayOfWeek.slice(0,3) === day.slice(0, 3)"
-                             class="event start-{{ g.group.dateStarted }} end-{{ g.group.dateFinished }}"
+                        <div *ngIf="g.group['dayOfWeek'].slice(0,3) === day.slice(0, 3)"
+                             class="event start-{{ g.group['dateStarted'] }} end-{{ g.group['dateFinished'] }}"
                                 [ngClass]="g.group.type">
                             <!-- Fetch only two first digit of the date -->
-                            <p class="title">{{ g.group.course.name }} - Group {{ g.group.groupNumber }}</p>
-                            <p class="teacher">{{ g.group.teacher.person.firstName }} {{ g.group.teacher.person.lastName }} </p>
+                            <p class="title">{{ g.group["course"].name }} - Group {{ g.group["groupNumber"] }}</p>
+                            <p class="teacher">{{ g.group["teacher"]["person"]["firstName"] }} {{ g.group["teacher"]["person"]["lastName"] }} </p>
                             <br>
                             <p class="type">{{ g.group.type }}</p>
                         </div>

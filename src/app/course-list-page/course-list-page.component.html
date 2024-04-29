@@ -3,22 +3,27 @@
 <h3>BACK:
   <a href="#">Home</a>
 </h3>
-<table class="course-table">
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCourseModal">
+  Add Course
+</button>
+
+<table class="table">
   <caption>List all courses in the system</caption>
   <thead>
   <tr>
     <th>ID</th>
     <th>Course</th>
     <th>Coordinator Teacher</th>
-    <th>ETCS</th>
+    <th>ECTS</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let course of courses" [routerLink]="['/course/details', course.id]">
     <td>{{ course.id}}</td>
     <td>{{ course.name }}</td>
-    <td>{{ course.coordinatorTeacher.person.firstName }} {{ course.coordinatorTeacher.person.lastName }} {{ course.coordinatorTeacher.academicTitle.title }}</td>
-    <td>{{ course.ects }}</td>
+    <td>{{ course["coordinatorTeacher"]["person"]["firstName"] }} {{ course["coordinatorTeacher"]["person"]["lastName"] }} {{ course["coordinatorTeacher"]["academicTitle"].title }}</td>
+    <td>{{ course["ects"] }}</td>
   </tr>
   </tbody>
 </table>

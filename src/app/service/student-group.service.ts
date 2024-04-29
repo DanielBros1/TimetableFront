@@ -30,4 +30,9 @@ export class StudentGroupService {
     getStudentGroupsByStudentNumber(studentNumber: String): Observable<any[]> {
         return this.http.get<any[]>(`${this.url}/student/${studentNumber}`);
     }
+
+    addStudentToGroup(studentGroup: any): Observable<any> {
+        return this.http.post(this.url, studentGroup);
+    }
+
 }

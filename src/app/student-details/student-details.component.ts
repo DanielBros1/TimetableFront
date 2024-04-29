@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {GroupsService} from "../groups.service";
+import {GroupsService} from "../service/groups.service";
 import {ActivatedRoute} from "@angular/router";
-import {CourseService} from "../course.service";
-import {StudentService} from "../student.service";
-import {StudentGroupService} from "../student-group.service";
+import {CourseService} from "../service/course.service";
+import {StudentService} from "../service/student.service";
+import {StudentGroupService} from "../service/student-group.service";
 import {CommonModule} from "@angular/common";
 
 @Component({
@@ -17,7 +17,7 @@ import {CommonModule} from "@angular/common";
 })
 export class StudentDetailsComponent implements OnInit {
 
-    student: any;
+    student: any = { person: {} };
     groups: any[] = [];
     times: string[] = ['8 AM', '9 AM', '10 AM', '11 AM', '12 AM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM'];
     days: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];

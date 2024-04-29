@@ -1,15 +1,12 @@
 
 
-<!--&lt;!&ndash;Print information about course&ndash;&gt;-->
 <h1>Course Information</h1>
 <p>Course {{ course.id }} - {{ course.name }}</p>
 <p>{{ course.coordinatorTeacher.person.firstName }} {{ course.coordinatorTeacher.person.lastName }} {{ course.coordinatorTeacher.academicTitle.title }}</p>
 <p>ETCS: {{ course.ects }}</p>
 
-<!-- *ngFor groups -->
 
 
-<!--&lt;!&ndash;Print information about course groups&ndash;&gt;-->
 <h1>Course Groups</h1>
 <div *ngFor="let group of groups">
     <p>Group ID: {{ group.id }}, Course ID: {{ group.course.name }}</p>
@@ -29,6 +26,7 @@
     <p>{{ event.class }}</p>
 
 </div>
+
 
 
 <div class="calendar">
