@@ -3,7 +3,7 @@ import {RouterLink} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {StudentGroupService} from "../service/student-group.service";
-import {GroupsService} from "../service/groups.service";
+import {GroupService} from "../service/group.service";
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -25,7 +25,7 @@ export class StudentListPageComponent implements OnInit {
   @ViewChild('email') email!: ElementRef;
   @ViewChild('password') password!: ElementRef;
 
-  constructor(private http: HttpClient, private studentGroupService: StudentGroupService, private groupsService: GroupsService) {
+  constructor(private http: HttpClient, private studentGroupService: StudentGroupService, private groupsService: GroupService) {
   }
 
   ngOnInit(): void {
@@ -49,6 +49,7 @@ export class StudentListPageComponent implements OnInit {
     this.studentGroupService.addStudentToGroup(studentGroup).subscribe(() => {
       console.log('Student added to group');
     });
+    this.closePopup();
   }
 
   findStudentById(studentId: string): any {
@@ -69,7 +70,7 @@ export class StudentListPageComponent implements OnInit {
     }
   }
 
-  showLogin(): void {
+  showAddStudentPopup(): void {
     this.popup.nativeElement.classList.add('active');
   }
 

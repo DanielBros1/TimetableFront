@@ -54,8 +54,8 @@
                              class="event start-{{ group['dateStarted'] }} end-{{ group['dateFinished'] }}"
                              [ngClass]="group.type">
                             <p class="title">{{ course.name }} - Group {{ group["groupNumber"] }}</p>
-                            <p class="teacher">{{ group["teacher"]["person"]["firstName"] }} {{ group["teacher"]["person"]["lastName"] }} </p>
-                            <br>
+                            <p class="teacher">{{ group["teacher"]["person"]["firstName"] }} {{ group["teacher"]["person"]["lastName"] }}
+
                             <p class="type">{{ group.type }}</p>
                         </div>
                     </ng-container>

@@ -1,22 +1,138 @@
+<div class="right">
+    <button id="show-login" (click)="showAddCoursePopup()">Add a new Course</button>
+</div>
 
+<div class="popup" #popupCourse>
+    <div class="close-btn" (click)="closeCoursePopup()">&times;</div>
+    <div class="form">
+        <h2>Add Student to Group</h2>
+        <div class="form-element">
+            <label for="courseName">Course Name</label>
+            <input type="text" id="courseName" [(ngModel)]="courseName"/>
+        </div>
+        <div class="form-element">
+            <label for="coordinatorTeacher">Coordinator Teacher</label>
+            <select id="coordinatorTeacher" [(ngModel)]="coordinatorTeacherId">
+                <option *ngFor="let teacher of teachers"
+                        [value]="teacher.id">{{ teacher["person"]["firstName"] }} {{ teacher["person"]["lastName"] }} {{ teacher["academicTitle"].title }}</option>
+            </select>
+        </div>
+        <div class="form-element">
+            <label for="ects">ECTS</label>
+            <input type="number" id="ects" [(ngModel)]="ects"/>
+        </div>
+        <div class="form-element">
+            <button (click)="addCourse(courseName, coordinatorTeacherId, ects)">Add Course</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="left">
+    <button id="show-group" (click)="showAddGroupPopup()">Add a new group</button>
+</div>
+
+<div class="popup" #popupGroup>
+    <div class="close-btn" (click)="closeGroupPopup()">&times;</div>
+    <div class="form">
+        <h2>Add a new Group</h2>
+        <div class="form-element">
+            <label for="courseId">Course</label>
+            <select id="courseId" [(ngModel)]="courseID">
+                <option *ngFor="let course of courses" [value]="course.id">{{ course.name }}</option>
+            </select>
+        </div>
+        <div class="form-element">
+            <label for="teacherId">Teacher</label>
+            <select id="teacherId" [(ngModel)]="teacherID">
+                <option *ngFor="let teacher of teachers"
+                        [value]="teacher.id">{{ teacher["person"]["firstName"] }} {{ teacher["person"]["lastName"] }} {{ teacher["academicTitle"].title }}</option>
+            </select>
+        </div>
+        <div class="form-element">
+            <label for="groupNumber">Group Number</label>
+            <input type="number" id="groupNumber" [(ngModel)]="groupNumber"/>
+        </div>
+        <div class="form-element">
+<!--           Data started and data is formatted: HH::MM:SS-->
+            <!-- Option: 8:00 --- 17:00 -->
+            <label for="dateStarted">Date Started</label>
+            <select id="dateStarted" [(ngModel)]="dateStarted">
+                <option value="08:00:00">08:00</option>
+                <option value="09:00:00">09:00</option>
+                <option value="10:00:00">10:00</option>
+                <option value="11:00:00">11:00</option>
+                <option value="12:00:00">12:00</option>
+                <option value="13:00:00">13:00</option>
+                <option value="14:00:00">14:00</option>
+                <option value="15:00:00">15:00</option>
+                <option value="16:00:00">16:00</option>
+                <option value="17:00:00">17:00</option>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <label for="dateFinished">Date Finished</label>
+            <select id="dateFinished" [(ngModel)]="dateFinished">
+                <option value="09:00:00">09:00</option>
+                <option value="10:00:00">10:00</option>
+                <option value="11:00:00">11:00</option>
+                <option value="12:00:00">12:00</option>
+                <option value="13:00:00">13:00</option>
+                <option value="14:00:00">14:00</option>
+                <option value="15:00:00">15:00</option>
+                <option value="16:00:00">16:00</option>
+                <option value="17:00:00">17:00</option>
+                <option value="18:00:00">18:00</option>
+            </select>
+        </div>
+        <div class="form-element">
+            <label for="dayOfWeek">Day of Week</label>
+            <select id="dayOfWeek" [(ngModel)]="dayOfWeek">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
+        </div>
+        <div class="form-element">
+            <label for="type">Type</label>
+            <select id="type" [(ngModel)]="type">
+                <option value="Lecture">Lecture</option>
+                <option value="Lab">Lab</option>
+                <option value="Class">Class</option>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <button (click)="addGroup(courseID, teacherID, groupNumber, dateStarted, dateFinished, dayOfWeek, type)">Add
+                Group
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="divider"></div>
 
 
 <table class="table">
-  <caption></caption>
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Course</th>
-    <th>Coordinator Teacher</th>
-    <th>ECTS</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let course of courses" [routerLink]="['/course/details', course.id]">
-    <td>{{ course.id}}</td>
-    <td>{{ course.name }}</td>
-    <td>{{ course["coordinatorTeacher"]["person"]["firstName"] }} {{ course["coordinatorTeacher"]["person"]["lastName"] }} {{ course["coordinatorTeacher"]["academicTitle"].title }}</td>
-    <td>{{ course["ects"] }}</td>
-  </tr>
-  </tbody>
+    <caption></caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Course</th>
+        <th>Coordinator Teacher</th>
+        <th>ECTS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of courses" [routerLink]="['/course/details', course.id]">
+        <td>{{ course.id}}</td>
+        <td>{{ course.name }}</td>
+        <td>{{ course["coordinatorTeacher"]["person"]["firstName"] }} {{ course["coordinatorTeacher"]["person"]["lastName"] }} {{ course["coordinatorTeacher"]["academicTitle"].title }}</td>
+        <td>{{ course["ects"] }}</td>
+    </tr>
+    </tbody>
 </table>

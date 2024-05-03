@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
 import {CourseService} from "../service/course.service";
-import {GroupsService} from "../service/groups.service";
+import {GroupService} from "../service/group.service";
 
 // CommonModule is imported to use ngFor and ngIf in the template
 @Component({
@@ -21,7 +21,7 @@ export class CourseDetailsComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private courseService: CourseService,
-                private groupsService: GroupsService) {
+                private groupsService: GroupService) {
     }
 
     ngOnInit(): void {

@@ -1,27 +1,23 @@
-# TimetableFront
+# Timetable application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+## Short description
+The timetable application is a web application that allows to browse the timetable of the university. The application is divided into two parts: the frontend (Angular) and the backend (Spring Boot). The frontend part allows to browse the timetable and execute GET and POST requests to the backend. The backend part allows to get the timetable data from the database and send it to the frontend. The application uses the MariaDB database to store the timetable data.
+It is also possible to perform CRUD operations on StudentGroup entities in the database.
 
-## Development server
+## Technologies
+- Angular 16
+- TypeScript 5.4.5
+- HTML
+- CSS
+- Spring Boot 
+- Java 20
+- Maven
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## How to run
+1. Clone both frontend and backend repositories
+2. Load the database schema from the `database_schema.sql` file (in the backend repository)
+    after creating a database named `timetable` (COMMAND: `mysql -u root -p timetable < database_schema.sql`)
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Run the backend application (COMMAND: `mvn spring-boot:run`)
+3. Run the frontend application (COMMAND: `ng serve`)
+4. Open the browser and go to `http://localhost:4200/` (backend application runs on `http://localhost:8080/`)

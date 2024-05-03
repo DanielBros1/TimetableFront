@@ -14,11 +14,6 @@ export class CourseService {
 
   courses: any[] = [];
 
-  ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:8080/courses').subscribe(data => {
-      this.courses = data;
-    });
-  }
   getCourseById(id: any): Observable<any> {
     return this.http.get(`${this.url}/${id}`);
   }

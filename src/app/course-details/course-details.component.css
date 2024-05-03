@@ -153,13 +153,11 @@ table tr:nth-child(even) {
 }
 
 
-.type {
+.event .type {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.8rem;
-    margin-bottom: 0.25rem;
-
-
+    padding: 0.1rem 0
 }
 .teacher {
     font-size: 0.92rem;

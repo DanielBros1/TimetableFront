@@ -1,1 +1,26 @@
 /*css style is inherited from the parent component (styles.css) in the 'app' folder*/
+.right {
+  position: absolute;
+  top: 15%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+.left {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.right button,
+.left button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f5f5f5;
+  background-color: #1fb2a2;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

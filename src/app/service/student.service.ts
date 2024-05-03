@@ -14,12 +14,6 @@ export class StudentService {
 
   students: any[] = [];
 
-
-  ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:8080/students').subscribe(data => {
-      this.students = data;
-    });
-  }
   getStudentByStudentNumber(studentNumber: number): Observable<any> {
         return this.http.get<any>(`${this.url}/${studentNumber}`);
     }
