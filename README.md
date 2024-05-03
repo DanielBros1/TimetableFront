@@ -18,7 +18,7 @@ The backend part allows to get the data from the database and transfer it to the
 ## Database
 - MySQL
 
-![Screenshot 2024-04-29 210822.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-04-29%20210822.png)
+![Screenshot 2024-04-29 210822](https://github.com/DanielBros1/TimetableFront/assets/112472952/ef34833d-7c75-4498-a899-12d94a8b6c11)
 
 
 ## Setup
@@ -30,16 +30,17 @@ The backend part allows to get the data from the database and transfer it to the
 
 ## Screenshots
 
-![Screenshot 2024-05-03 232149.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232149.png)
-![Screenshot 2024-05-03 232215.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232215.png)
-![Screenshot 2024-05-03 232201.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232201.png)
-![Screenshot 2024-05-03 232311.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232311.png)
-![Screenshot 2024-05-03 232510.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232510.png)
-![Screenshot 2024-05-03 232524.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232524.png)
-![Screenshot 2024-05-03 232558.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232558.png)
-![Screenshot 2024-05-03 232616.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20232616.png)
-![Screenshot 2024-05-03 233009.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20233009.png)
-![Screenshot 2024-05-03 233035.png](..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%202024-05-03%20233035.png)
+
+![Screenshot 2024-05-03 232149](https://github.com/DanielBros1/TimetableFront/assets/112472952/51de56a7-83c5-41d6-bd5b-ec2e14c00f28)
+![Screenshot 2024-05-03 232215](https://github.com/DanielBros1/TimetableFront/assets/112472952/e437fe7c-991a-4e1b-bc7d-fa112541ec34)
+![Screenshot 2024-05-03 232201](https://github.com/DanielBros1/TimetableFront/assets/112472952/44be0b52-4f36-4f0f-b8ba-1718478bd114)
+![Screenshot 2024-05-03 232311](https://github.com/DanielBros1/TimetableFront/assets/112472952/6ede0394-c30e-4bc8-8c81-f38d66034d34)
+![Screenshot 2024-05-03 232510](https://github.com/DanielBros1/TimetableFront/assets/112472952/01c80484-e62b-4c38-bfbb-37b15f69aebe)
+![Screenshot 2024-05-03 232524](https://github.com/DanielBros1/TimetableFront/assets/112472952/0cedfe32-7d86-4967-8906-0e3f4fa88443)
+![Screenshot 2024-05-03 232558](https://github.com/DanielBros1/TimetableFront/assets/112472952/3d40e75e-453f-4ee9-99e3-9c48260454ab)
+![Screenshot 2024-05-03 232616](https://github.com/DanielBros1/TimetableFront/assets/112472952/e04a2fa7-4e5b-4cc5-ae0b-a5583f0b3da6)
+![Screenshot 2024-05-03 233009](https://github.com/DanielBros1/TimetableFront/assets/112472952/7f55677d-e069-489c-9b57-5ce458e2eea0)
+![Screenshot 2024-05-03 233035](https://github.com/DanielBros1/TimetableFront/assets/112472952/061cebb6-bd63-45d7-b0de-db6f28859ec4)
 
 ## How to run
 1. Clone both frontend and backend repositories
